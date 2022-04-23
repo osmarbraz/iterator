@@ -1,9 +1,9 @@
 
-import com.iterator.Facebook;
-import com.iterator.LinkedIn;
-import com.iterator.Profile;
-import com.iterator.SocialNetwork;
-import com.iterator.SocialSpammer;
+import com.iterator.socialnetworks.Facebook;
+import com.iterator.socialnetworks.LinkedIn;
+import com.iterator.profile.Profile;
+import com.iterator.socialnetworks.SocialNetwork;
+import com.iterator.spammer.SocialSpammer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

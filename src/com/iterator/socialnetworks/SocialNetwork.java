@@ -1,4 +1,6 @@
-package com.iterator;
+package com.iterator.socialnetworks;
+
+import com.iterator.iterators.ProfileIterator;
 
 /**
  * Define interface comum de rede social.

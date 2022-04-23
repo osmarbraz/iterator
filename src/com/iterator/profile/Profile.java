@@ -1,4 +1,4 @@
-package com.iterator;
+package com.iterator.profile;
 
 import java.util.ArrayList;
 import java.util.HashMap;

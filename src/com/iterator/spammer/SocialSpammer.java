@@ -1,4 +1,8 @@
-package com.iterator;
+package com.iterator.spammer;
+
+import com.iterator.profile.Profile;
+import com.iterator.socialnetworks.SocialNetwork;
+import com.iterator.iterators.ProfileIterator;
 
 /**
  * Aplicação de envio de mensagens.
@@ -22,7 +26,7 @@ public class SocialSpammer {
     }
 
     public void sendSpamToFriends(String profileEmail, String message) {
-        System.out.println("\nIterating over friends...\n");
+        System.out.println("\nIterando sobre amigos...\n");
         iterator = network.createFriendsIterator(profileEmail);
         while (iterator.hasNext()) {
             Profile profile = iterator.getNext();
@@ -31,7 +35,7 @@ public class SocialSpammer {
     }
 
     public void sendSpamToCoworkers(String profileEmail, String message) {
-        System.out.println("\nIterating over coworkers...\n");
+        System.out.println("\nIterando sobre colegas de trabalho...\n");
         iterator = network.createCoworkersIterator(profileEmail);
         while (iterator.hasNext()) {
             Profile profile = iterator.getNext();
@@ -40,6 +44,6 @@ public class SocialSpammer {
     }
 
     public void sendMessage(String email, String message) {
-        System.out.println("Sent message to: '" + email + "'. Message body: '" + message + "'");
+        System.out.println("Enviar mensagem para: '" + email + "'. Corpo da mensagem: '" + message + "'");
     }
 }

@@ -1,5 +1,8 @@
-package com.iterator;
+package com.iterator.socialnetworks;
 
+import com.iterator.profile.Profile;
+import com.iterator.iterators.LinkedInIterator;
+import com.iterator.iterators.ProfileIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,22 +24,22 @@ public class LinkedIn implements SocialNetwork {
     }
 
     public Profile requestContactInfoFromLinkedInAPI(String profileEmail) {
-        // Here would be a POST request to one of the LinkedIn API endpoints.
-        // Instead, we emulates long network connection, which you would expect
-        // in the real life...
+        // Aqui seria uma solicitação POST para um dos endpoints da API do LinkedIn.
+        // Em vez disso, emulamos uma longa conexão de rede, o que você esperaria
+        // na vida real...
         simulateNetworkLatency();
-        System.out.println("LinkedIn: Loading profile '" + profileEmail + "' over the network...");
+        System.out.println("LinkedIn: Carregando perfil '" + profileEmail + "' pela rede...");
 
         // ...and return test data.
         return findContact(profileEmail);
     }
 
     public List<String> requestRelatedContactsFromLinkedInAPI(String profileEmail, String contactType) {
-        // Here would be a POST request to one of the LinkedIn API endpoints.
-        // Instead, we emulates long network connection, which you would expect
-        // in the real life.
+        // Aqui seria uma solicitação POST para um dos endpoints da API do LinkedIn.
+        // Em vez disso, emulamos uma longa conexão de rede, o que você esperaria
+        // na vida real.
         simulateNetworkLatency();
-        System.out.println("LinkedIn: Loading '" + contactType + "' list of '" + profileEmail + "' over the network...");
+        System.out.println("LinkedIn: Carregando '" + contactType + "' lista de '" + profileEmail + "' pela rede...");
 
         // ...and return test data.
         Profile profile = findContact(profileEmail);

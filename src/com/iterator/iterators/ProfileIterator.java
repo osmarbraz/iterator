@@ -1,4 +1,6 @@
-package com.iterator;
+package com.iterator.iterators;
+
+import com.iterator.profile.Profile;
 
 /**
  * A interface comum a todos os iteradores.

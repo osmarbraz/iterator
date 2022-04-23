@@ -1,5 +1,8 @@
-package com.iterator;
+package com.iterator.socialnetworks;
 
+import com.iterator.profile.Profile;
+import com.iterator.iterators.FacebookIterator;
+import com.iterator.iterators.ProfileIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class Facebook implements SocialNetwork {
         // Instead, we emulates long network connection, which you would expect
         // in the real life...
         simulateNetworkLatency();
-        System.out.println("Facebook: Loading profile '" + profileEmail + "' over the network...");
+        System.out.println("Facebook: Carregando perfil '" + profileEmail + "' pela rede...");
 
         // ...and return test data.
         return findProfile(profileEmail);
@@ -36,7 +39,7 @@ public class Facebook implements SocialNetwork {
         // Instead, we emulates long network connection, which you would expect
         // in the real life...
         simulateNetworkLatency();
-        System.out.println("Facebook: Loading '" + contactType + "' list of '" + profileEmail + "' over the network...");
+        System.out.println("Facebook: Carregando '" + contactType + "' lista de '" + profileEmail + "' pela rede...");
 
         // ...and return test data.
         Profile profile = findProfile(profileEmail);

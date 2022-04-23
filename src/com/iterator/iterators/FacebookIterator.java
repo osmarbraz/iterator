@@ -1,15 +1,17 @@
-package com.iterator;
+package com.iterator.iterators;
 
+import com.iterator.socialnetworks.Facebook;
+import com.iterator.profile.Profile;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementa iteração sobre perfis do LinkedIn.
+ * Implementa iteração sobre perfis do Facebook.
  */
-public class LinkedInIterator implements ProfileIterator {
+public class FacebookIterator implements ProfileIterator {
 
     // O iterador precisa de uma referência para a coleção que ele percorre.
-    private LinkedIn linkedIn;
+    private Facebook facebook;
     private String type;
     private String email;
 
@@ -18,20 +20,20 @@ public class LinkedInIterator implements ProfileIterator {
     // estado de iteração.
     private int currentPosition = 0;
     private List<String> emails = new ArrayList<>();
-    private List<Profile> contacts = new ArrayList<>();
+    private List<Profile> profiles = new ArrayList<>();
 
-    public LinkedInIterator(LinkedIn linkedIn, String type, String email) {
-        this.linkedIn = linkedIn;
+    public FacebookIterator(Facebook facebook, String type, String email) {
+        this.facebook = facebook;
         this.type = type;
         this.email = email;
     }
 
     private void lazyLoad() {
         if (emails.size() == 0) {
-            List<String> profiles = linkedIn.requestRelatedContactsFromLinkedInAPI(this.email, this.type);
+            List<String> profiles = facebook.requestProfileFriendsFromFacebook(this.email, this.type);
             for (String profile : profiles) {
                 this.emails.add(profile);
-                this.contacts.add(null);
+                this.profiles.add(null);
             }
         }
     }
@@ -55,13 +57,13 @@ public class LinkedInIterator implements ProfileIterator {
         }
 
         String friendEmail = emails.get(currentPosition);
-        Profile friendContact = contacts.get(currentPosition);
-        if (friendContact == null) {
-            friendContact = linkedIn.requestContactInfoFromLinkedInAPI(friendEmail);
-            contacts.set(currentPosition, friendContact);
+        Profile friendProfile = profiles.get(currentPosition);
+        if (friendProfile == null) {
+            friendProfile = facebook.requestProfileFromFacebook(friendEmail);
+            profiles.set(currentPosition, friendProfile);
         }
         currentPosition++;
-        return friendContact;
+        return friendProfile;
     }
 
     @Override
